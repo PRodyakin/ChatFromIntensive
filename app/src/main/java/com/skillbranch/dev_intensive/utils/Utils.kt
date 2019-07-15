@@ -10,11 +10,17 @@ object Utils {
     fun parseFullName(fullName: String?, divider: String = " "): Pair<String?, String?> {
 
         var parts: List<String>? = fullName?.split(divider)
+
         val firstName = parts?.getOrNull(0)
         //var lastName = parts?.getOrNull(1);
         parts = parts?.drop(1)
         var lastName:String? = ""
         parts?.forEach { i -> lastName += divider + firstToUpperCase(i) }
+
+        when{
+            parts.isNullOrEmpty() -> firstName = "null"
+        }
+
 
         return firstToUpperCase(firstName) to lastName?.substring(1, lastName?.length)
 

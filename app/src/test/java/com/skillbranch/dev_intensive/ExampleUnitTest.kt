@@ -90,6 +90,22 @@ class ExampleUnitTest {
         println(Utils.transliteration(name,reverse = false, divider = " "))
 
     }
+
+    @Test
+    fun test_name_parser() {
+
+        val name:String = "Никола Тесла Петрович"
+
+
+        println(Utils.parseFullName("Никола Тесла Петрович"))
+        println(Utils.parseFullName(null))
+        println(Utils.parseFullName(""))
+        println(Utils.parseFullName(" "))
+        println(Utils.parseFullName("John"))
+
+    }
+
+
     @Test
     fun test_data_mapping() {
 
