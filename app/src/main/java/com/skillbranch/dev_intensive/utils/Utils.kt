@@ -1,4 +1,4 @@
-package com.skillbranch.dev_intensive.utils
+package com.skillbranch.devintensive.utils
 
 
 object Utils {

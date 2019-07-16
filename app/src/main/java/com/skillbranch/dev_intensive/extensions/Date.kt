@@ -1,4 +1,4 @@
-package com.skillbranch.dev_intensive.extensions
+package com.skillbranch.devintensive.extensions
 
 import android.text.format.DateUtils
 import java.text.SimpleDateFormat

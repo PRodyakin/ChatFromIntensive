@@ -1,4 +1,4 @@
-package com.skillbranch.dev_intensive.models
+package com.skillbranch.devintensive.models
 
 class UserView(
     val id:String,

@@ -1,8 +1,8 @@
-package com.skillbranch.dev_intensive.extensions
+package com.skillbranch.devintensive.extensions
 
-import com.skillbranch.dev_intensive.models.User
-import com.skillbranch.dev_intensive.models.UserView
-import com.skillbranch.dev_intensive.utils.Utils
+import com.skillbranch.devintensive.models.User
+import com.skillbranch.devintensive.models.UserView
+import com.skillbranch.devintensive.utils.Utils
 
 fun User.toUserView():UserView{
 

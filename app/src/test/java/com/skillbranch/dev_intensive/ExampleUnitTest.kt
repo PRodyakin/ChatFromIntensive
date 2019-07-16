@@ -1,12 +1,12 @@
-package com.skillbranch.dev_intensive
+package com.skillbranch.devintensive
 
 
-import com.skillbranch.dev_intensive.extensions.*
-import com.skillbranch.dev_intensive.models.BaseMessage
-import com.skillbranch.dev_intensive.models.Chat
-import com.skillbranch.dev_intensive.models.TextMessage
-import com.skillbranch.dev_intensive.models.User
-import com.skillbranch.dev_intensive.utils.Utils
+import com.skillbranch.devintensive.extensions.*
+import com.skillbranch.devintensive.models.BaseMessage
+import com.skillbranch.devintensive.models.Chat
+import com.skillbranch.devintensive.models.TextMessage
+import com.skillbranch.devintensive.models.User
+import com.skillbranch.devintensive.utils.Utils
 import org.junit.Test
 
 import org.junit.Assert.*
