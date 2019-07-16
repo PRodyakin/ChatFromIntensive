@@ -3,26 +3,32 @@ package com.skillbranch.dev_intensive.utils
 
 object Utils {
 
-    fun firstToUpperCase(word: String?): String {
-        return word?.substring(0, 1)!!.toUpperCase() + word?.substring(1)
+    fun firstToUpperCase(word: String?): String? {
+        return (word?.substring(0, 1)?.toUpperCase() + word?.substring(1))
     }
 
     fun parseFullName(fullName: String?, divider: String = " "): Pair<String?, String?> {
 
         var parts: List<String>? = fullName?.split(divider)
 
-        val firstName = parts?.getOrNull(0)
-        //var lastName = parts?.getOrNull(1);
-        parts = parts?.drop(1)
-        var lastName:String? = ""
-        parts?.forEach { i -> lastName += divider + firstToUpperCase(i) }
-
-        when{
-            parts.isNullOrEmpty() -> firstName = "null"
+        if (parts.isNullOrEmpty() || fullName.isNullOrEmpty()) {
+            return null to null
+        } else if (" ".equals(fullName)) {
+            return null to null
         }
 
+        var firstName: String? = parts?.getOrNull(0)
+        //var lastName = parts?.getOrNull(1);
+        parts = parts?.drop(1)
+        var lastName: String? = ""
+        parts?.forEach { i -> lastName += divider + if (i.isEmpty()) null else firstToUpperCase(i) } ?: null
 
-        return firstToUpperCase(firstName) to lastName?.substring(1, lastName?.length)
+        when {
+            lastName.isNullOrEmpty() -> lastName = null
+            else -> lastName = lastName?.trim()
+        }
+
+        return firstToUpperCase(firstName) to lastName
 
     }
 
@@ -74,7 +80,7 @@ object Utils {
 
         }
 
-        val fullNameUpperCase:Pair<String?,String?> = parseFullName(fullName = result, divider =  divider)
+        val fullNameUpperCase: Pair<String?, String?> = parseFullName(fullName = result, divider = divider)
 
         return fullNameUpperCase.first + divider + fullNameUpperCase.second
     }
@@ -82,8 +88,8 @@ object Utils {
 
     fun toInicials(fullName: String): String? {
 
-        val fullNameUpperCase:Pair<String?,String?> = parseFullName(fullName = fullName, divider =  " ")
-        return  fullNameUpperCase.first?.substring(0,1)   + fullNameUpperCase.second?.substring(0,1)
+        val fullNameUpperCase: Pair<String?, String?> = parseFullName(fullName = fullName, divider = " ")
+        return fullNameUpperCase.first?.substring(0, 1) + fullNameUpperCase.second?.substring(0, 1)
 
     }
 
